@@ -30,8 +30,21 @@ class Deck
     5.times do
       @card_array.shift
     end
-  
   end
+
+  def replenish_hand(hand)
+    #We are assuming by this point the player class has already discarded two cards from hand
+    return false if hand.hand_array.count == 5
+    @card_array[0..2].each do |c|
+      hand.hand_array << c
+    end
+    3.times do
+      @card_array.shift
+    end
+    true
+  end
+
+
 
 end
 d = Deck.new
