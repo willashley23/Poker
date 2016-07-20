@@ -7,7 +7,7 @@ class Deck
 
   def initialize
     @card_array = Array.new(52)
-    @suits = %w{Heart Diamond Club Spade}
+    @suits = %w{Heart Diamond Clubs Spades}
     populate_deck
     @card_array.shuffle!
   end
