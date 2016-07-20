@@ -3,7 +3,7 @@ require_relative 'hand'
 
 class Deck
 
-  attr_accessor :suits, :card_array
+  attr_accessor :card_array
 
   def initialize
     @card_array = Array.new(52)
@@ -32,13 +32,15 @@ class Deck
     end
   end
 
-  def replenish_hand(hand)
+  def replenish_hand(hand,amount)
     #We are assuming by this point the player class has already discarded two cards from hand
     return false if hand.hand_array.count == 5
-    @card_array[0..2].each do |c|
-      hand.hand_array << c
+
+    amount.times do |n|
+      hand.hand_array << @card_array[n]
     end
-    3.times do
+
+    amount.times do
       @card_array.shift
     end
     true
