@@ -32,24 +32,24 @@ describe Deck do
       end
     end
 
-    describe "#replenish_hand" do
-      it "Forbids drawing if the hand is size 5" do
-        d.deal_hand(h)
-        expect(d.replenish_hand(h,2)).to eq(false)
-      end
-
-      it "Gives three cards to the hand" do
-        d.deal_hand(h)
-        h.hand_array.pop(3)
-        d.replenish_hand(h,3)
-        expect(h.hand_array.count).to eq(5)
-      end
-
-      it "Keeps track of the deck size after drawing" do
-        d.deal_hand(h)
-        h.hand_array.pop(3)
-        d.replenish_hand(h,3)
-        expect(d.card_array.count).to eq(44)
-      end
-    end
+    # describe "#replenish_hand" do
+    #   it "Forbids drawing if the hand is size 5" do
+    #     d.deal_hand(h)
+    #     expect(d.replenish_hand(h,2)).to eq(false)
+    #   end
+    #
+    #   it "Gives three cards to the hand" do
+    #     d.deal_hand(h)
+    #     h.hand_array.pop(3)
+    #     d.replenish_hand(h,3)
+    #     expect(h.hand_array.count).to eq(5)
+    #   end
+    #
+    #   it "Keeps track of the deck size after drawing" do
+    #     d.deal_hand(h)
+    #     h.hand_array.pop(3)
+    #     d.replenish_hand(h,3)
+    #     expect(d.card_array.count).to eq(44)
+    #   end
+    # end
 end
